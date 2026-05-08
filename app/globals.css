@@ -8,19 +8,75 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-bebas);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0A0408;
     --foreground: #ededed;
   }
+}
+
+@theme {
+  --color-pink: #E181B0;
+  /* --color-bodyPink: #AC98A4; */
+  --color-bodyPink: #AC98A4;
+  --color-buttonPink: #FF82C7;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  /* letter-spacing: 0.05em; */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width:1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+

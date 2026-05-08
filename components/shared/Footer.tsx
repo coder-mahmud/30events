@@ -1,0 +1,133 @@
+import Link from "next/link";
+// import { Instagram, Facebook } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#130A10] pt-16 md:pt-20 lg:pt-24">
+      <div className="container">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-16">
+          {/* Left */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-duration="800"
+            data-aos-delay="0"
+          >
+            <p className="mb-6 text-[18px] font-bold text-[#FAF3F7]">
+              YOUR <span className="text-pink">30+</span> EVENTS
+            </p>
+
+            <p className="max-w-[320px] text-[16px] leading-[1.6] text-bodyPink">
+              Curated events for grown ups. Your favorite music from the 80s,
+              90s & early 2000s. Adults vibes, no late night, just good times.
+            </p>
+
+            <div
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="700"
+              data-aos-delay="120"
+              className="mt-6 flex items-center gap-3"
+            >
+              <a
+                href="#"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-bodyPink transition hover:border-pink hover:text-pink"
+              >
+                {/* <Instagram size={18} /> */}
+              </a>
+
+              <a
+                href="#"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-bodyPink transition hover:border-pink hover:text-pink"
+              >
+                {/* <Facebook size={18} /> */}
+              </a>
+            </div>
+          </div>
+
+          {/* Middle */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-duration="800"
+            data-aos-delay="150"
+            className="lg:pl-10"
+          >
+            <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.25em] text-pink">
+              Explore
+            </p>
+
+            <ul className="space-y-3">
+              {["About", "Tickets", "Faq", "Join", "Contact"].map(
+                (item, index) => (
+                  <li
+                    key={item}
+                    data-aos="fade-up"
+                    data-aos-offset="0"
+                    data-aos-duration="600"
+                    data-aos-delay={220 + index * 80}
+                  >
+                    <Link
+                      href={`/#${item.toLowerCase()}`}
+                      className="text-[16px] text-bodyPink transition hover:text-[#FAF3F7]"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Right */}
+          <div
+            data-aos="fade-up"
+            data-aos-offset="0"
+            data-aos-duration="800"
+            data-aos-delay="300"
+          >
+            <p className="mb-5 text-[13px] font-semibold uppercase tracking-[0.25em] text-pink">
+              Stay In
+            </p>
+
+            <p className="mb-4 text-[16px] text-bodyPink">
+              First access to drops & guest list.
+            </p>
+
+            <form
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="700"
+              data-aos-delay="420"
+              className="flex items-center gap-2"
+            >
+              <input
+                type="email"
+                placeholder="email@you.com"
+                className="h-11 w-full rounded-full bg-[#2A1723] px-4 text-[14px] text-[#FAF3F7] outline-none placeholder:text-bodyPink"
+              />
+
+              <button
+                type="submit"
+                className="h-11 rounded-full bg-pink px-5 text-[14px] font-semibold text-black transition hover:opacity-90"
+              >
+                Join
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div
+          data-aos="fade-up"
+          data-aos-offset="0"
+          data-aos-duration="800"
+          data-aos-delay="500"
+          className="mt-14 border-t border-white/10 py-6 text-center text-[13px] text-bodyPink md:text-left"
+        >
+          © 2026 Your 30+ Events. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
+}
