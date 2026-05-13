@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FooterForm from "./FooterForm";
 // import { Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
@@ -58,8 +59,14 @@ export default function Footer() {
             </p>
 
             <ul className="space-y-3">
-              {["About", "Tickets", "Faq", "Join", "Contact"].map(
-                (item, index) => (
+              {["About", "Tickets", "Faq", "Join", "Contact"].map((item, index) => {
+                const isExternal = item === "Tickets";
+
+                const href = isExternal
+                  ? "https://www.eventbrite.ca/e/1989107357652?aff=oddtdtcreator"
+                  : `/#${item.toLowerCase()}`;
+
+                return (
                   <li
                     key={item}
                     data-aos="fade-up"
@@ -67,15 +74,26 @@ export default function Footer() {
                     data-aos-duration="600"
                     data-aos-delay={220 + index * 80}
                   >
-                    <Link
-                      href={`/#${item.toLowerCase()}`}
-                      className="text-[16px] text-bodyPink transition hover:text-[#FAF3F7]"
-                    >
-                      {item}
-                    </Link>
+                    {isExternal ? (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[16px] text-bodyPink transition hover:text-[#FAF3F7]"
+                      >
+                        {item}
+                      </a>
+                    ) : (
+                      <a
+                        href={href}
+                        className="text-[16px] text-bodyPink transition hover:text-[#FAF3F7]"
+                      >
+                        {item}
+                      </a>
+                    )}
                   </li>
-                )
-              )}
+                );
+              })}
             </ul>
           </div>
 
@@ -94,26 +112,9 @@ export default function Footer() {
               First access to drops & guest list.
             </p>
 
-            <form
-              data-aos="fade-up"
-              data-aos-offset="0"
-              data-aos-duration="700"
-              data-aos-delay="420"
-              className="flex items-center gap-2"
-            >
-              <input
-                type="email"
-                placeholder="email@you.com"
-                className="h-11 w-full rounded-full bg-[#2A1723] px-4 text-[14px] text-[#FAF3F7] outline-none placeholder:text-bodyPink"
-              />
+            <FooterForm />
 
-              <button
-                type="submit"
-                className="h-11 rounded-full bg-pink px-5 text-[14px] font-semibold text-black transition hover:opacity-90"
-              >
-                Join
-              </button>
-            </form>
+
           </div>
         </div>
 

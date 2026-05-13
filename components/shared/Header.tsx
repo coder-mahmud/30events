@@ -54,12 +54,13 @@ export default function Header() {
               ))}
             </div>
 
-            <Link
-              href="/tickets"
+            <a
+              href="https://www.eventbrite.ca/e/1989107357652?aff=oddtdtcreator"
+              target="_blank"
               className="hidden rounded-full bg-[#FF82C7] px-6 py-2.5 text-[14px] font-semibold tracking-wide text-black transition-all duration-300 hover:bg-[#e7cada] hover:shadow-[0_0_20px_rgba(255,130,199,0.6)] md:inline-flex"
             >
               GET TICKETS
-            </Link>
+            </a>
 
             <button
               onClick={() => setOpen(true)}

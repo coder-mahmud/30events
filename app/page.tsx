@@ -14,7 +14,7 @@ const LandingPage = () => {
         <JoinSection />
         
         <VibeSection />
-        <TicketsSection />
+        {/* <TicketsSection /> */}
         <FAQSection />
         <JoinListSection />
         <ContactSection />
