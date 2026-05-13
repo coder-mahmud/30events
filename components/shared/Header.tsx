@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const navItems = ["ABOUT", "TICKETS", "FAQ", "JOIN", "CONTACT"];
+const navItems = ["ABOUT","FAQ", "JOIN", "CONTACT"];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -117,13 +117,14 @@ export default function Header() {
             </Link>
           ))}
 
-          <Link
-            href="/#tickets"
+          <a
+            href="https://www.eventbrite.ca/e/1989107357652?aff=oddtdtcreator"
+            target="_blank"
             onClick={() => setOpen(false)}
             className="mt-4 w-fit rounded-full bg-[#ff6bc8] px-6 py-3 text-xs font-extrabold tracking-wide text-black"
           >
             GET TICKETS
-          </Link>
+          </a>
         </div>
       </aside>
     </>

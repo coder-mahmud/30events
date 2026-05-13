@@ -70,12 +70,13 @@ const HeroSection = () => {
             </p>
 
             <div data-aos="fade-up" data-aos-offset="0" data-aos-duration="800" data-aos-delay="0" className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="#"
+              <a
+                href="https://www.eventbrite.ca/e/80s-90s-hit-parade-day-time-club-party-tickets-1989107357652?aff=oddtdtcreator"
+                target="_blank"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-buttonPink px-8 py-4 text-sm font-semibold uppercase tracking-[1.4px] text-[#0A0408] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] sm:w-auto"
               >
                 Get Tickets <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
 
               <Link
                 href="#"
@@ -83,6 +84,8 @@ const HeroSection = () => {
               >
                 Upcoming Events
               </Link>
+
+              
             </div>
 
             <div className="mt-14 grid grid-cols-2 gap-6 sm:flex sm:gap-10 lg:mt-24">
