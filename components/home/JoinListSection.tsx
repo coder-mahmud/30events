@@ -1,7 +1,55 @@
+"use client";
+
 // import { Instagram, Facebook } from "lucide-react";
 import {} from "lucide-react";
+import { useState } from "react";
 
 export default function JoinListSection() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!email.trim()) return;
+
+    setLoading(true);
+    setResponseMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "Newsletter Subscriber",
+          email,
+          enquiry: "Newsletter Signup",
+          message: "Joined via Join The List section.",
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        setResponseMessage("Thanks for joining the list!");
+        setEmail("");
+      } else {
+        setIsSuccess(false);
+        setResponseMessage(data.message || "Something went wrong.");
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setResponseMessage("Failed to join the list.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="bg-black py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -45,6 +93,7 @@ export default function JoinListSection() {
           </p>
 
           <form
+            onSubmit={handleSubmit}
             data-aos="fade-up"
             data-aos-offset="0"
             data-aos-duration="900"
@@ -53,17 +102,31 @@ export default function JoinListSection() {
           >
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               placeholder="email@you.com"
               className="h-[68px] flex-1 rounded-full bg-[#2A1723] px-8 text-[20px] text-[#FAF3F7] outline-none placeholder:text-bodyPink focus:ring-2 focus:ring-pink md:text-[24px]"
             />
 
             <button
               type="submit"
-              className="h-[68px] rounded-full bg-pink px-10 text-[16px] font-bold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_28px_rgba(225,129,176,0.55)] md:px-14 md:text-[18px]"
+              disabled={loading}
+              className="h-[68px] rounded-full bg-pink px-10 text-[16px] font-bold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_28px_rgba(225,129,176,0.55)] disabled:opacity-60 md:px-14 md:text-[18px]"
             >
-              Join The List
+              {loading ? "Joining..." : "Join The List"}
             </button>
           </form>
+
+          {responseMessage && (
+            <p
+              className={`mt-4 text-sm ${
+                isSuccess ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {responseMessage}
+            </p>
+          )}
 
           <div
             data-aos="fade-up"
