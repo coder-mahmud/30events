@@ -42,6 +42,7 @@ const FooterForm = () => {
       setLoading(false);
     }
   };
+  
   return (
     <form
       onSubmit={handleSubmit}
