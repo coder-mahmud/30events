@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import HeroCarousel from "./HeroCarousel";
 
 const points = [
   "Disco Forever",
@@ -85,7 +86,7 @@ const HeroSection = () => {
                 Upcoming Events
               </Link>
 
-              
+
             </div>
 
             <div className="mt-14 grid grid-cols-2 gap-6 sm:flex sm:gap-10 lg:mt-24">
@@ -112,7 +113,7 @@ const HeroSection = () => {
         />
       </section>
 
-      <section className="mx-auto max-w-[2000px] bg-black">
+      {/* <section className="mx-auto max-w-[2000px] bg-black">
         <div className="flex w-full flex-col items-center justify-center gap-5 p-6 md:flex-row md:flex-wrap md:justify-between md:gap-8 lg:gap-12">
           {points.map((point, index) => (
             <div data-aos="fade-up" data-aos-offset="0" data-aos-duration="800" data-aos-delay={index * 100} key={point}>
@@ -134,7 +135,11 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+      <HeroCarousel />
+
+
+
     </>
   );
 };

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FooterForm from "./FooterForm";
 // import { Instagram, Facebook } from "lucide-react";
 
@@ -34,14 +35,14 @@ export default function Footer() {
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-bodyPink transition hover:border-pink hover:text-pink"
               >
-                {/* <Instagram size={18} /> */}
+                <Image src="/images/instagram.svg" width={22} height={22} alt="Instagram" />
               </a>
 
               <a
                 href="#"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-bodyPink transition hover:border-pink hover:text-pink"
               >
-                {/* <Facebook size={18} /> */}
+                 <Image src="/images/facebook.svg" width={22} height={22} alt="facebook" />
               </a>
             </div>
           </div>

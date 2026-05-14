@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 console.log("CONTACT SECTION LOADED");
 import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
@@ -197,6 +198,12 @@ export default function ContactSection() {
               icon={<MapPin size={22} />}
               label="HQ"
               value="Vancouver, BC."
+            />
+
+            <InfoCard
+              icon={<Image src="/images/instagram.svg" width={22} height={22} alt="Instagram" />}
+              label="INSTAGRAM"
+              value="@your30plurs.events"
             />
           </div>
         </div>

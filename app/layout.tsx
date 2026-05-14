@@ -4,6 +4,7 @@ import AOSInit from "@/components/shared/AOSInit";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import GHLChatWidget from "@/components/shared/GHLChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <GHLChatWidget />
         <Footer />
         <AOSInit />
       </body>

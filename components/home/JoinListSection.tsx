@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 // import { Instagram, Facebook } from "lucide-react";
 import {} from "lucide-react";
@@ -140,7 +141,7 @@ export default function JoinListSection() {
               aria-label="Instagram"
               className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 text-bodyPink transition-all duration-300 hover:-translate-y-1 hover:border-pink hover:text-pink hover:shadow-[0_0_20px_rgba(225,129,176,0.35)]"
             >
-              {/* <Instagram size={24} /> */}
+              <Image src="/images/instagram.svg" width={22} height={22} alt="Instagram" />
             </a>
 
             <a
@@ -148,7 +149,7 @@ export default function JoinListSection() {
               aria-label="Facebook"
               className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 text-bodyPink transition-all duration-300 hover:-translate-y-1 hover:border-pink hover:text-pink hover:shadow-[0_0_20px_rgba(225,129,176,0.35)]"
             >
-              {/* <Facebook size={24} /> */}
+              <Image src="/images/facebook.svg" width={22} height={22} alt="facebook" />
             </a>
           </div>
         </div>
